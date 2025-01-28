@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="balenc.css">
+</head>
+<body>
+    <img src="CAROUSEL_SU25_SHOW_EMPTY_SET_01_2200x2200_1x1.avif" class="bg">
+
+    <div class="balenciaga">
+        <img src="https://osmodeus.ru/upload/iblock/3aa/3aaef0394171baf921f8d648d680f28c.png"
+        alt="eror404"
+        width="50%">
+    </div>
+    <div class="clothes" id="clt"></div>
+<script>
+    let cards = null
+    fetch("balenc.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+        const clothes = document.getElementById("clt");
+        data.cards.forEach(product => {
+            const productDiv = document.createElement('div');
+            const productImg = document.createElement("img");
+            productImg.className = 'a';
+            clothes.appendChild(productDiv);
+            productDiv.appendChild(productImg);
+            productImg.src = product.src;
+        });
+        })
+        .catch(error => {
+            console.error("Ошибка", error);
+        });
+</script>
+</body>
+</html>

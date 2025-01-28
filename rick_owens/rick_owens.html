@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rick_style.css">
+</head>
+<body>
+    <div>
+        <img src="https://assets.vogue.com/photos/66f7b21044241e4871dbfa75/master/w_1920,c_limit/00005-rick-owens-spring-2025-ready-to-wear-credit-brand.jpg" class="bg">
+    </div>
+    <div class="rick">
+        <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/10/rick-owens-logo-freelogovectors.net_.png"
+        alt="eror404"
+        width="50%">
+    </div>
+    <div class="clothes" id="clt"></div>
+        <!-- <div>
+            <img src="https://assets.vogue.com/photos/66fae934eebf9c208578a504/master/w_1920,c_limit/00001-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae935c49616e62358147a/master/w_1920,c_limit/00002-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae934818e176aa88a05a5/master/w_1920,c_limit/00003-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae93965a1fc724899a9cf/master/w_1920,c_limit/00004-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae93932ea3ad8a380119a/master/w_1920,c_limit/00005-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae9391f21ef88375c1b20/master/w_1920,c_limit/00006-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae93d0cca0118c811f960/master/w_1920,c_limit/00007-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae93d29cca70d6aff7dd6/master/w_1920,c_limit/00008-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div>
+        <div>
+            <img src="https://assets.vogue.com/photos/66fae93e65a1fc724899a9d1/master/w_1920,c_limit/00009-rick-owens-spring-2025-ready-to-wear-models-credit-brand.jpg"
+            alt="eror404"
+            width=300px
+            class="a">
+        </div> -->
+    <script>
+        let cards = null;
+        fetch("rick.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+        const clothes = document.getElementById("clt");
+        data.cards.forEach(product => {
+            const productDiv = document.createElement('div');
+            const productImg = document.createElement("img");
+            productImg.className = 'a';
+            clothes.appendChild(productDiv);
+            productDiv.appendChild(productImg);
+            productImg.src = product.src;
+        });
+        })
+        .catch(error => {
+            console.error("Ошибка", error);
+        });
+    </script>
+</body>
+</html>

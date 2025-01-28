@@ -1,0 +1,28 @@
+.bg{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+    filter: brightness(50%);
+}
+.rick{
+    text-align: center;
+    filter: brightness(10);
+}
+
+.clothes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.a{
+    border-radius: 50px;
+    width: 300px;
+}
